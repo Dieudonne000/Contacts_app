@@ -1,7 +1,6 @@
-import axios from 'axios';
+import api from './api';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
 
 const Home = () => {
     const [formData, setFormData] = useState({
@@ -31,7 +30,7 @@ const Home = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('/api/contacts', formData)
+        api.post('/contacts', formData)
             .then(() => navigate('/contacts'))
             .catch(error => console.error(error));
     };
@@ -39,8 +38,8 @@ const Home = () => {
     return (
         <div className="max-w-lg mx-auto p-8">
             <form onSubmit={handleSubmit}>
-            <div className='inline-block'>
-                <h2 className="text-2xl font-bold mb-6">General Information</h2>
+                <div className='inline-block'>
+                    <h2 className="text-2xl font-bold mb-6">General Information</h2>
                     <div className="mb-4">
                         <input
                             className="w-full p-2 border border-gray-300 rounded"
@@ -107,7 +106,7 @@ const Home = () => {
                             onChange={handleChange}
                         />
                     </div>
-            </div>
+                </div>
                 <div className='inline-block'>
                     <h2 className="text-2xl font-bold mb-6">Contact Details</h2>
                     <div className="mb-4">

@@ -5,8 +5,8 @@ import Contacts from './contacts';
 const App = () => (
     <Router>
         <Routes>
-            <Route path="/c" element={<Home />} />
-            <Route path="/" element={<Contacts />} />
+            <Route path="/" element={<Home />} />
+            <Route path="/contacts" element={<Contacts />} />
         </Routes>
     </Router>
 );

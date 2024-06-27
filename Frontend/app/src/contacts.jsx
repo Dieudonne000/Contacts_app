@@ -1,18 +1,18 @@
-import  { useEffect, useState } from 'react';
-import axios from 'axios';
+import api from './api';
+import { useEffect, useState } from 'react';
 
 const Contacts = () => {
     const [contacts, setContacts] = useState([]);
     const [editFormData, setEditFormData] = useState(null);
 
     useEffect(() => {
-        axios.get('/api/items')
+        api.get('/contacts')
             .then(response => setContacts(response.data))
             .catch(error => console.error(error));
     }, []);
 
     const handleDelete = (id) => {
-        axios.delete(`/api/items/${id}`)
+        api.delete(`/contacts/${id}`)
             .then(() => setContacts(contacts.filter(contact => contact._id !== id)))
             .catch(error => console.error(error));
     };
@@ -23,7 +23,7 @@ const Contacts = () => {
     };
 
     const handleEditSubmit = (id) => {
-        axios.put(`/api/items/${id}`, editFormData)
+        api.put(`/contacts/${id}`, editFormData)
             .then(response => {
                 setContacts(contacts.map(contact => contact._id === id ? response.data : contact));
                 setEditFormData(null);
