@@ -1,6 +1,7 @@
 import api from './api';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Home = () => {
     const [formData, setFormData] = useState({
@@ -36,13 +37,13 @@ const Home = () => {
     };
 
     return (
-        <div className="max-w-lg mx-auto p-8">
-            <form onSubmit={handleSubmit}>
-                <div className='inline-block'>
+        <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-blue-200 to-purple-200">
+            <form onSubmit={handleSubmit} className="w-full max-w-4xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden md:flex">
+                <div className="w-full md:w-1/2 p-8 bg-white">
                     <h2 className="text-2xl font-bold mb-6">General Information</h2>
                     <div className="mb-4">
                         <input
-                            className="w-full p-2 border border-gray-300 rounded"
+                            className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
                             type="text"
                             name="title"
                             placeholder="Title"
@@ -52,7 +53,7 @@ const Home = () => {
                     </div>
                     <div className="mb-4 flex gap-4">
                         <input
-                            className="w-full p-2 border border-gray-300 rounded"
+                            className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
                             type="text"
                             name="firstName"
                             placeholder="First Name"
@@ -60,7 +61,7 @@ const Home = () => {
                             onChange={handleChange}
                         />
                         <input
-                            className="w-full p-2 border border-gray-300 rounded"
+                            className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
                             type="text"
                             name="lastName"
                             placeholder="Last Name"
@@ -70,7 +71,7 @@ const Home = () => {
                     </div>
                     <div className="mb-4">
                         <input
-                            className="w-full p-2 border border-gray-300 rounded"
+                            className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
                             type="text"
                             name="position"
                             placeholder="Position"
@@ -80,7 +81,7 @@ const Home = () => {
                     </div>
                     <div className="mb-4">
                         <input
-                            className="w-full p-2 border border-gray-300 rounded"
+                            className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
                             type="text"
                             name="company"
                             placeholder="Company"
@@ -90,7 +91,7 @@ const Home = () => {
                     </div>
                     <div className="mb-4 flex gap-4">
                         <input
-                            className="w-full p-2 border border-gray-300 rounded"
+                            className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
                             type="text"
                             name="businessArena"
                             placeholder="Business Arena"
@@ -98,7 +99,7 @@ const Home = () => {
                             onChange={handleChange}
                         />
                         <input
-                            className="w-full p-2 border border-gray-300 rounded"
+                            className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500"
                             type="text"
                             name="employees"
                             placeholder="Employees"
@@ -106,12 +107,13 @@ const Home = () => {
                             onChange={handleChange}
                         />
                     </div>
+                    <div className='block'><Link className='py-2 px-5 mb-4 bg-blue-600 rounded text-white' to={'/contacts'}>Contacts</Link></div>
                 </div>
-                <div className='inline-block'>
+                <div className="w-full md:w-1/2 p-8 bg-purple-600 text-white">
                     <h2 className="text-2xl font-bold mb-6">Contact Details</h2>
                     <div className="mb-4">
                         <input
-                            className="w-full p-2 border border-gray-300 rounded"
+                            className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 bg-white text-black"
                             type="text"
                             name="street"
                             placeholder="Street + Nr"
@@ -121,7 +123,7 @@ const Home = () => {
                     </div>
                     <div className="mb-4">
                         <input
-                            className="w-full p-2 border border-gray-300 rounded"
+                            className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 bg-white text-black"
                             type="text"
                             name="additionalInfo"
                             placeholder="Additional Information"
@@ -131,7 +133,7 @@ const Home = () => {
                     </div>
                     <div className="mb-4 flex gap-4">
                         <input
-                            className="w-full p-2 border border-gray-300 rounded"
+                            className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 bg-white text-black"
                             type="text"
                             name="zipCode"
                             placeholder="Zip Code"
@@ -139,7 +141,7 @@ const Home = () => {
                             onChange={handleChange}
                         />
                         <input
-                            className="w-full p-2 border border-gray-300 rounded"
+                            className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 bg-white text-black"
                             type="text"
                             name="place"
                             placeholder="Place"
@@ -149,7 +151,7 @@ const Home = () => {
                     </div>
                     <div className="mb-4">
                         <input
-                            className="w-full p-2 border border-gray-300 rounded"
+                            className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 bg-white text-black"
                             type="text"
                             name="country"
                             placeholder="Country"
@@ -159,7 +161,7 @@ const Home = () => {
                     </div>
                     <div className="mb-4 flex gap-4">
                         <input
-                            className="w-full p-2 border border-gray-300 rounded"
+                            className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 bg-white text-black"
                             type="text"
                             name="phoneCode"
                             placeholder="Code +"
@@ -167,7 +169,7 @@ const Home = () => {
                             onChange={handleChange}
                         />
                         <input
-                            className="w-full p-2 border border-gray-300 rounded"
+                            className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 bg-white text-black"
                             type="text"
                             name="phoneNumber"
                             placeholder="Phone Number"
@@ -177,7 +179,7 @@ const Home = () => {
                     </div>
                     <div className="mb-4">
                         <input
-                            className="w-full p-2 border border-gray-300 rounded"
+                            className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:border-blue-500 bg-white text-black"
                             type="email"
                             name="email"
                             placeholder="Your Email"
@@ -192,7 +194,7 @@ const Home = () => {
                                 type="checkbox"
                                 name="terms"
                             />
-                            I do accept the <a href="#" className="text-blue-500">Terms and Conditions</a> of your site.
+                            I do accept the <a href="#" className="text-blue-200 underline">Terms and Conditions</a> of your site.
                         </label>
                     </div>
                     <button
