@@ -7,6 +7,4 @@ export default {
     extend: {},
   },
   plugins: [],
-}
-
-
+};
